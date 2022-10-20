@@ -76,6 +76,11 @@ public class TollCalculator {
             Map<String,String> mp = tollCalculator.getLocationMap(innerObj);
             String s = mp.get(start);
             String e = mp.get(end);
+             if(s==null || e==null)
+            {
+                System.out.println("please enter valid start/end point");
+                System.exit(0);
+            }
             double dist = tollCalculator.calculateDistance(s,e, innerObj);
             double cost = tollCalculator.calculateCost(dist);
             System.out.println("distance: "+dist);
